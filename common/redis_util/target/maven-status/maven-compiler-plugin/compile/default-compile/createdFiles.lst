@@ -1,0 +1,5 @@
+com\yaoxiong\retail\redis\utils\RedisUtil.class
+com\yaoxiong\retail\redis\config\RedisConfig.class
+com\yaoxiong\retail\redis\model\FastJsonRedisSerializer.class
+com\yaoxiong\retail\redis\model\FastJson2JsonRedisSerializer.class
+com\yaoxiong\retail\redis\utils\RedisUtil$1.class

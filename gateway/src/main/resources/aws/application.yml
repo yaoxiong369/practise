@@ -1,0 +1,42 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.31.83.164:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/*/acl/**
+        - id: commodity-server
+          uri: lb://commodity-server
+          predicates:
+            - Path=/*/commodity/**,/*/config/**,/*/purchase/**
+        - id: order-server
+          uri: lb://order-server
+          predicates:
+            - Path=/*/order/**
+#        - id: commodity-server
+#          uri: lb://commodity-server
+#          predicates:
+#            - Path=/*/commodity/**
+
+
+
+
+  redis:
+    host: retail-redis-cluster-001.v7ni01.0001.use1.cache.amazonaws.com
+    port: 6379
+    database: 0
+    timeout: 1800000
+#  session:
+#    store-type: redis

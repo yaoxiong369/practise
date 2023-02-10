@@ -1,0 +1,6 @@
+com\yaoxiong\retail\user\UserApplication.class
+com\yaoxiong\retail\user\service\impl\UserDetailsServiceImpl.class
+com\yaoxiong\retail\user\entity\User.class
+com\yaoxiong\retail\user\service\impl\UserServiceImpl.class
+com\yaoxiong\retail\user\mapper\UserMapper.class
+com\yaoxiong\retail\user\service\UserService.class

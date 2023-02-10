@@ -1,0 +1,33 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:rsa.pub
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3307/retail?serverTimezone=GMT%2B8
+    username: root
+    password: admin
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+  application:
+    name: order-server
+server:
+  port: 8081
+
+
+file:
+  accessPath: /uploadimg/
+  staticAccessPath: /uploadimg/**
+  uploadFolder: D://dev/txt/file/
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

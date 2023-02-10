@@ -1,0 +1,33 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          public-key-location: classpath:rsa.pub
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database-1.cjrhtbu8kipi.us-east-1.rds.amazonaws.com:3306/retail?serverTimezone=US/Eastern
+    username: admin
+    password: awsrds123
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 172.31.83.164:8848
+
+
+  application:
+    name: commodity-server
+server:
+  port: 8080
+
+
+file:
+  accessPath: /api/commodity/img/
+  staticAccessPath: /api/commodity/img/**
+  uploadFolder: /home/ec2-user/retail/img/
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
