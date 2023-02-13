@@ -70,12 +70,14 @@
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
+                            <goal>push</goal>
                         </goals>
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>${project.artifactId}:${project.version}</imageName>
-                    <dockerHost>http://localhost:2375</dockerHost>
+                    <imageName>trmylf/${project.artifactId}:${project.version}</imageName>
+                    <serverId>docker-hub</serverId>
+                    <registryUrl>https://index.docker.io/v1/</registryUrl>
                     <baseImage>openjdk:8</baseImage>
                     <forceTags>true</forceTags>
                     <entryPoint>["java", "-jar","${project.build.finalName}.jar"]
